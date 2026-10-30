@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101a30">
+  <title>BOOKORA — ترجمهٔ کتاب</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">B</span><span>BOOKORA</span></a>
+    <div class="top-note"><span class="status-dot"></span> استودیوی ترجمهٔ کتاب</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow"><span></span> دنیای کتاب‌ها، بدون مرز</div>
+      <h1>هر کتابی،<br><em>به زبان تو.</em></h1>
+      <p class="hero-copy">کتابت را بارگذاری کن، زبان مقصد را انتخاب کن و ترجمهٔ صفحه‌به‌صفحه را دریافت کن.</p>
+    </section>
+
+    <section class="workspace">
+      <div class="workspace-head">
+        <div><span class="step">01 / شروع</span><h2>کتابت را وارد کن</h2></div>
+        <div class="file-type">PDF <span>حداکثر ۵۰ مگابایت</span></div>
+      </div>
+
+      <form id="translateForm">
+        <label class="dropzone" id="dropzone" for="pdfFile">
+          <input id="pdfFile" name="file" type="file" accept="application/pdf,.pdf" required>
+          <span class="upload-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5M4 16.5v2A1.5 1.5 0 0 0 5.5 20h13a1.5 1.5 0 0 0 1.5-1.5v-2"/></svg>
+          </span>
+          <strong id="fileTitle">فایل PDF را اینجا رها کن</strong>
+          <span class="drop-sub" id="fileSub">یا برای انتخاب فایل کلیک کن</span>
+          <span class="browse">انتخاب کتاب</span>
+        </label>
+
+        <div class="language-row">
+          <div class="field">
+            <label for="targetLanguage">زبان مقصد</label>
+            <select id="targetLanguage" name="target_language">
+              <option value="fa" selected>فارسی</option><option value="en">انگلیسی</option>
+              <option value="de">آلمانی</option><option value="fr">فرانسوی</option>
+              <option value="es">اسپانیایی</option><option value="it">ایتالیایی</option>
+              <option value="tr">ترکی</option><option value="ar">عربی</option>
+              <option value="ru">روسی</option><option value="pt">پرتغالی</option>
+              <option value="zh-CN">چینی</option><option value="ja">ژاپنی</option>
+              <option value="ko">کره‌ای</option><option value="hi">هندی</option>
+              <option value="nl">هلندی</option><option value="pl">لهستانی</option>
+              <option value="uk">اوکراینی</option><option value="sv">سوئدی</option>
+            </select>
+          </div>
+          <div class="field info-field">
+            <label>روش پردازش</label>
+            <div class="info-value"><span class="tiny-gold"></span> استخراج متن + OCR</div>
+          </div>
+        </div>
+
+        <button class="translate-button" id="submitButton" type="submit">
+          <span>شروع ترجمه</span><b>←</b>
+        </button>
+      </form>
+
+      <div class="progress-wrap" id="progressWrap" hidden>
+        <div class="progress-top"><strong id="progressTitle">در حال آماده‌سازی کتاب...</strong><span class="spinner"></span></div>
+        <div class="progress-track"><div class="progress-bar"></div></div>
+        <p id="progressText">پردازش صفحات ممکن است کمی زمان ببرد. این پنجره را نبند.</p>
+      </div>
+
+      <div class="message" id="message" role="status" hidden></div>
+      <section class="results" id="results" hidden>
+        <div class="result-heading"><div><span class="step">02 / خروجی</span><h2>ترجمه آماده است</h2></div><button id="downloadAgain" class="text-button">دانلود دوباره ↓</button></div>
+        <div class="preview-grid" id="previewGrid"></div>
+        <p class="preview-note">پیش‌نمایش چند صفحهٔ نخست نمایش داده می‌شود؛ فایل ZIP شامل تمام صفحات ترجمه‌شده است.</p>
+      </section>
+    </section>
+
+    <section class="features">
+      <div><span>01</span><strong>صفحه‌به‌صفحه</strong><p>هر صفحه در یک تصویر مستقل</p></div>
+      <div><span>02</span><strong>تشخیص متن</strong><p>استخراج متن و OCR برای اسکن‌ها</p></div>
+      <div><span>03</span><strong>چندزبانه</strong><p>انتخاب زبان مقصد از فهرست</p></div>
+    </section>
+  </main>
+  <footer><span>BOOKORA</span><span>Read beyond borders.</span></footer>
+  <script src="/static/app.js"></script>
+</body>
+</html>
